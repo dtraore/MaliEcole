@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>
+    {% block title %}
+        Mon site
+    {% endblock %}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block style %}
+      {% stylesheets '@EcoleModuleBundle/Resources/public/css/bootstrap.min.css' filter='cssrewrite'  %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+      {% endstylesheets %}
+  {% endblock %}
+
+  {% block javascript %}
+      {% javascripts '@EcoleModuleBundle/Resources/public/js/bootstrap.min.js'  %}
+        <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% javascripts '@EcoleModuleBundle/Resources/public/js/jquery.min.js'  %}
+        <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+  {% endblock %}
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  {% block header %}
+      <h1>My First Bootstrap Page</h1>
+      <p>Resize this responsive page to see the effect!</p> 
+  {% endblock %}
+</div>
+  
+<div class="container">
+  <div class="row">
+    {% block link %}
+        <div class="col-sm-4">
+          <h3>Column 1</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Column 2</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Column 3</h3>
+        </div>
+    {% endblock %}
+  </div>
+  <div class="row">
+    {% block content %}
+      
+    {% endblock %}
+  </div>
+</div>
+</body>
+</html>

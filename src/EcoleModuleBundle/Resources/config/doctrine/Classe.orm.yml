@@ -1,0 +1,18 @@
+EcoleModuleBundle\Entity\Classe:
+    type: entity
+    table: null
+    repositoryClass: EcoleModuleBundle\Repository\ClasseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        description:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }
